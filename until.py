@@ -3,20 +3,6 @@ from win32file import GENERIC_READ, GENERIC_WRITE, OPEN_EXISTING
 from pywintypes import Time # 可以忽视这个 Time 报错（运行程序还是没问题的）
 import time
 
-def is_img(ext):
-    ext = ext.lower()
-    if ext == '.jpg':
-        return True
-    elif ext == '.png':
-        return True
-    elif ext == '.jpeg':
-        return True
-    elif ext == '.bmp':
-        return True
-    else:
-        return False
-
-
 def modifyFileTime(filePath, createTime, modifyTime, accessTime, offset):
   """
   用来修改任意文件的相关时间属性，时间格式：YYYY-MM-DD HH:MM:SS 例如：2019-02-02 00:01:02
